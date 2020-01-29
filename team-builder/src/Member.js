@@ -8,10 +8,17 @@ const Members = props => {
           <h2>{member.name}</h2>
           <p>{member.email}</p>
           <p>{member.role}</p>
-          <button className="button muted-button">Edit</button>
+          <button
+            onClick={() => {
+              props.editRow(member);
+            }}
+            onclassName="button"
+          >
+            Edit
+          </button>
           <button
             onClick={() => props.deleteMember(member.id)}
-            className="button muted-button"
+            className="button"
           >
             Delete
           </button>
